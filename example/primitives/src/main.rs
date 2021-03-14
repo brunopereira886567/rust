@@ -18,7 +18,9 @@ fn signed_integers() {
 
     let _signed_isize:[isize; 2] = [isize::MIN, isize::MAX];
     println!("_signed_isize: MIN:{}--MAX:{}", isize::MIN, isize::MAX);
+}
 
+fn unsigned_integers() {
     //unsigned integers
     let _unsigned_u8: [u8; 2] = [u8::MIN, u8::MAX]; 
     println!("_unsigned_u8 MIN:{} MAX:{}", u8::MIN, u8::MAX);
@@ -33,7 +35,8 @@ fn signed_integers() {
     let _unsigned_usize: [usize; 2] = [usize::MIN, usize::MAX]; 
     println!("_unsigned_usize MIN:{} MAX:{}", usize::MIN, usize::MAX);
     println!("---------------------");
-
+}
+fn float(){
     println!("f32: MIN:{}", f32::MIN);
     println!();
     println!("f32: MIN:{}", f64::MIN);
@@ -42,10 +45,32 @@ fn signed_integers() {
     println!();
     println!("f64: MAX:{}", f64::MAX);
     println!();
+}
 
+fn char(){
+ let  char1:char = 'a'; 
+ let  char2:char = 'º';   
+ println!("{}", char1);
+ println!("{}", char2);
+}
 
+fn bool(){
+    let bool1: bool = true;
+    let bool2: bool = false;
+    println!("{}", bool1);
+    println!("{}", bool2);
+}
+
+fn compound_types(){
+    let _array: [i8; 5] = [1, 2, 3, 4, 5];  
+    let _tuples: (i8, bool) = (2, false);
 }
 
 fn main() {
     signed_integers();
+    unsigned_integers();
+    float();
+    char();
+    bool();
+    compound_types();
 }
