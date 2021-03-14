@@ -18,6 +18,11 @@ fn signed_integers() {
 
     let _signed_isize:[isize; 2] = [isize::MIN, isize::MAX];
     println!("_signed_isize: MIN:{}--MAX:{}", isize::MIN, isize::MAX);
+
+
+    let a:i8 = 10;
+    let b:i8 = 117;
+    println!("sum a + b = {}", a + b);
 }
 
 fn unsigned_integers() {
@@ -64,6 +69,13 @@ fn bool(){
 fn compound_types(){
     let _array: [i8; 5] = [1, 2, 3, 4, 5];  
     let _tuples: (i8, bool) = (2, false);
+
+    let mut _tuples: (i8, String, bool, f32) = (1, "Tupla Teste".to_string(), false, 1.0);
+    println!("value tupla 1 = {}", _tuples.0);
+    println!("value tupla 2 = {}", _tuples.1);
+    println!("value tupla 3 = {}", _tuples.2);
+    println!("value tupla 4 = {}", _tuples.3);
+    
 }
 
 fn main() {
