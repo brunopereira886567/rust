@@ -52,14 +52,14 @@ fn float(){
     println!();
 }
 
-fn char(){
+fn _char(){
  let  char1:char = 'a'; 
  let  char2:char = 'º';   
  println!("{}", char1);
  println!("{}", char2);
 }
 
-fn bool(){
+fn _bool(){
     let bool1: bool = true;
     let bool2: bool = false;
     println!("{}", bool1);
@@ -103,8 +103,8 @@ fn main() {
     signed_integers();
     unsigned_integers();
     float();
-    char();
-    bool();
+    _char();
+    _bool();
     compound_types();
     array_and_slice();
 }
