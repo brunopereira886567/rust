@@ -77,6 +77,27 @@ fn compound_types(){
     println!("value tupla 4 = {}", _tuples.3);
     
 }
+fn array_and_slice(){
+    //slice
+    let mut x = [1, 2, 3];
+    let x = &mut x[..];
+    x[1] = 7 ;
+    assert_eq!(x, &[1, 7, 3]);
+
+    let _slice = [100, 200, 3300, 100000];
+    assert_eq!(Some(&100), _slice.first());
+
+    let _blanck_slice: &[i32] = &[];
+    assert_eq!(None, _blanck_slice.first());
+
+    //array
+
+    let mut _array: [i8; 5] = [0; 5];
+    _array[1] = 100;
+    _array[2] = 127;
+    assert_eq!([0,100,127, 0, 0], &_array[0..]);
+    for x in _array.iter() { println!("{}", x) }
+}
 
 fn main() {
     signed_integers();
@@ -85,4 +106,5 @@ fn main() {
     char();
     bool();
     compound_types();
+    array_and_slice();
 }
