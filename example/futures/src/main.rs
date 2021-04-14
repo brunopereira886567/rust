@@ -1,23 +1,19 @@
-#[derive(Default)]
-struct MyFuture {
-    count: u32,
-}
+pub struct ChatBox{}
 
-impl Future for MyFuture {
-    type Output = i32;
+impl Future for ChatBox {
+    type Item = String;
+    type Error = ();
+    fn poll(&mut self) -> Result<Async<Self::Item>, Self::Error>{
+        return Ok(Async::Ready("hello".to_string())) 
 
-    fn poll(&mut self, ctx: &Context) -> Poll<Self::Output> {
-        match self.count {
-            3 => Poll::Ready(3),
-            _ => {
-                self.count += 1;
-                ctx.waker().wake();
-                Poll::Pending
-            }
-        }
     }
 }
 fn main() {
-    let my_future = MyFuture::default();
-    println!("Output: {}", run(my_future));
+    let f = ChatBox{};
+    let p = f.map(|s| println!("{}", s));
+
+    println!("Begin ...");
+
+    tokio::run(p);
+    println!("End");
 }
