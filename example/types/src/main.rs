@@ -34,9 +34,32 @@ fn literals(){
 }
 
 
+fn inference(){
+    let elem = 5u8;
+
+    let mut vec = Vec::new();
+    vec.push(elem);
+    println!("{:?}", vec);
+}
+
+fn aliasing(){
+    type NanoSecond = u64;
+    type Inch = u64;
+    type u64_t = u64;
+     let nanoseconds: NanoSecond = 5 as u64_t;
+     let inches: Inch = 2 as u64_t;
+     println!("{} nanoseconds + {} inches = {} unit?",
+              nanoseconds,
+              inches,
+              nanoseconds + inches);
+}
+
+
 fn main() {
     casting();
     literals();
+    inference();
+    aliasing();
 }
 
 
